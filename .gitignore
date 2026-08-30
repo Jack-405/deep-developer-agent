@@ -1,0 +1,35 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment variables
+.env
+
+# 工作区注册表（projects/registry.json 记录用户本地绝对路径，运行时写入）
+projects/
+
+.history
+
+node_modules/
+
+# DeepDev 运行时数据（任何工作区的会话 / 日志 / 运行时记忆，统一 gitignore 隔离）
+.deepdev/
+
+# 日志产物（JSONL 启动量化等；backend/logging/ 源码不受影响）
+logs/
+
+# 第三方 MCP 源码（godot-ai / obsidian-mcp 等）：体积大、随上游更新，
+# 不进入仓库。由 scripts/ 安装脚本拉取到 vendor/<name>/，或按需单独管理。
+vendor/
+
+# 用户自备的 Agent Skills 仓库（如 Codex Godot Skills）：内容不入库，
+# 仅保留目录占位（.gitkeep）。由使用者自行下载放置到该目录，见 README。
+backend/skills/godot-skills-main/*
+!backend/skills/godot-skills-main/.gitkeep

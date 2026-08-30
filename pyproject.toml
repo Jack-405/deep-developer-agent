@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# 源码为扁平布局（backend/ + cli/，PEP 420 命名空间包，根目录无同名包目录），
+# 必须显式声明 wheel 要包含的包目录，否则 hatchling 默认按项目名
+# (deep_developer_agent) 探测目录失败，报 "Unable to determine which files to ship"。
+[tool.hatch.build.targets.wheel]
+packages = ["backend", "cli"]
+
+[tool.pyright]
+typeCheckingMode = "basic"  # 可选: "off", "basic", "standard", "strict"
+
+[project]
+name = "deep-developer-agent"
+version = "0.1.0"
+description = "基于 deepagents 与 langchain 的终端 AI 开发助手（REPL + 子智能体 + MCP 集成）"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+dependencies = [
+    "deepagents>=0.5.9",
+    "langchain==1.2.17",
+    "langchain-mcp-adapters>=0.1.0",
+    "langchain-openai==1.2.1",
+    "mcp>=1.0.0",
+    "pydantic-settings>=2.14.2",
+    "python-dotenv==1.2.2",
+    "rich>=13.0",
+]

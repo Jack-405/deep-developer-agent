@@ -1,0 +1,20 @@
+# 提交规范：统一行尾符（提交时按 LF 规范化，检出按平台默认）
+* text=auto
+
+# 脚本类明确行尾符（Windows 脚本 CRLF，shell 脚本 LF）
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+
+# 二进制文件（防止被 text=auto 误规范化，diff 按二进制处理）
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.whl binary
+*.exe binary
