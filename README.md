@@ -22,7 +22,7 @@
 ### 安装
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Jack-405/deep-developer-agent.git
 cd deep-developer-agent
 
 # 方式一：uv（推荐）
